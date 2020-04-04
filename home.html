@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>atg javascript</title>
+</head>
+<body>
+    <button type="button" onclick="start()">Fill form</button>
+    <p id="detail"></p>
+    <div class="kuch">
+        <div id="initial" class="full hide">
+            <div class="box">
+                <div class="top">
+                    <svg onclick="no_edit(this)" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    Event Type
+                </div>
+                <div class="rad">
+                    <p class="hea">Paid-event or free-event?</p>
+                    <form name="search" onsubmit="return check(this)" id="first">
+                        <div class="pata" id="pata">
+                            <p>
+                                <input value="paid" type="radio" onclick="enable(this)" id="paid" name="cost">
+                                <label for="paid"><img src="./img/paid.png" alt="paid" class="img-responsive" />
+                                <span>paid</span>  
+                                </label>
+                            </p>
+                            <p>
+                                <input value="free" type="radio" onclick="enable(this)" id="free" name="cost">
+                                <label for="free"><img src="./img/free.png" alt="paid" class="img-responsive" />
+                                    <span>Free</span>
+                                </label>
+                            </p>
+                        </div>
+                        <input class="not" type="submit" value="Next" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="type_cost" class="full hide">
+            <div class="box">
+                <div class="top">
+                        <svg onclick="back_first(this)" class="barr" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
+                    Paid Event
+                </div>
+                <div class="rad">
+                    <div class="hea">
+                        <p>Single-cost event or multiple-cost event?</p>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z"/></svg> -->
+                        <i class="fa fa-info-circle" aria-hidden="true"><div class="abs">
+                            <p>This is a tooltip. Use it to show if there is any help text.<span></span></p>
+                        </div></i>
+                        
+                    </div>
+                    <form name="search" onsubmit="return forward(this)" id="first">
+                        <div class="pata" id="pata">
+                            <p>
+                                <input value="single" type="radio" onclick="enable(this)" id="single" name="parameter">
+                                <label for="single"><img src="./img/single.png" alt="single" class="img-responsive" />
+                                <span>single cost</span>  
+                                </label>
+                            </p>
+                            <p>
+                                <input value="multiple" type="radio" onclick="enable(this)" id="multiple" name="parameter">
+                                <label for="multiple"><img src="./img/multiple.png" alt="multiple" class="img-responsive" />
+                                    <span>multiple cost</span>
+                                </label>
+                            </p>
+                        </div>
+                        <input class="not" type="submit" value="Next" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="single" class="full1 hide">
+            <div class="box">
+                <div class="top">
+                    <svg onclick="back_second(this)" class="barr" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
+                    Price & Availability
+                </div>
+                <div class="rad">
+                    <p class="hea">Paid-event or free-event?</p>
+                    <p class="inp">
+                        <label for="amount">
+                            <i class="fa fa-inr" aria-hidden="true"></i>&nbsp;
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </label>
+                        <input onkeyup="keyup(this)" name="cost_value" type="number" id="amount" placeholder="Price per ticket" />
+                    </p>
+                    <p class="hea1">Availability?</p>
+                    <div class="avail">
+                        <form>
+                            <p>
+                                <input type="radio" value="online" id="online" name="line" />
+                                <label for="online">Online</label>
+                            </p>
+                            <p>
+                                <input type="radio" value="offline" id="offline" name="line" />
+                                <label for="offline">Offline</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="bot">
+                    <button onclick="take_price(this)" type="submit" class="submit">Done 👌</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="multiple" class="full2 hide">
+            <div class="box">
+                <div class="top">
+                    <svg class="barr final_back" onclick="back_third(this)" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/></svg>
+                    Multiple Ticket
+                    <div class="plus">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="blue" width="10" height="10" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+                        <span class="clear">Category</span>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="all">
+                                <!-- <div class="one">
+                                    <div class="head" onclick="toggle(this)">
+                                        <p class"id">1.</p>
+                                        <p class="category" id="category-%id%">Parking: </p>
+                                        <p class="rupee" id="value-%id%"><i class="fa fa-inr" aria-hidden="true"></i>100</p>
+                                        <div class="togg">
+                                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="togg hide">
+                                            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="description hide" id="description-%id%">
+                                        <p>This is a parking charge.This is a parking charge.This is a parking charge.This is a parking charge.This is a parking charge.This is a parking charge.This is a parking charge.</p>
+                                    </div>
+                                </div>  -->
+                    </div>
+                    <div class="form1">
+                        <div class="ins">
+                            <div class="last">1.</div>
+                            <div class="for">
+                                <div class="cat">
+                                    <p>Category</p>
+                                </div>
+                                <input class="tex input_cat" type="text" id="mul_cat" placeholder="Example: Entry, food, or parking etc." />
+                                <p>Description</p>
+                                <textarea style="resize: none;" class="tex input_des" type="text" id="mul_des" placeholder="Example: Entry, food, or parking etc." rows="4"></textarea>
+                                <p>Ticket price for this category?</p>
+                                <p class="inp" id="id_input_val">
+                                    <label style="padding-top: 0.6em;" for="mul_amount">
+                                        <i class="fa fa-inr" aria-hidden="true"></i>&nbsp;
+                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    </label>
+                                    <input style="padding-top: -0.05em;" onkeyup="keyup(this)" class="input_val" type="number" id="mul_amount" placeholder="Price per ticket" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="bot">
+                    <div class="total_cost">Total cost: ₹0</div>
+                    <button type="submit" class="finish" onclick="finish(this)">Finish</button>
+                    <button type="submit" class="submit submit_btn">Done 👌</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script>
+        
+        function start(){
+            document.getElementById("initial").classList.remove("hide");
+            document.getElementById("detail").innerHTML = "";
+        }
+        function no_edit(obj){
+            obj.parentNode.parentNode.children[1].children[1].cost.value = "";
+            obj.parentNode.parentNode.children[1].children[1].children[0].children[0].children[0].checked = false;
+            obj.parentNode.parentNode.children[1].children[1].children[0].children[1].children[0].checked = false;
+            var cls = obj.parentNode.parentNode.children[1].children[1].children[1].className;
+            if(cls === "next"){
+                obj.parentNode.parentNode.children[1].children[1].children[1].classList.add("not");
+                obj.parentNode.parentNode.children[1].children[1].children[1].classList.remove("next");
+            }
+            obj.parentNode.parentNode.parentNode.classList.add("hide");
+        }
+
+        function back_first(obj){
+            obj.parentNode.parentNode.children[1].children[1].parameter.value = "";
+            obj.parentNode.parentNode.children[1].children[1].children[0].children[0].children[0].checked = false;
+            obj.parentNode.parentNode.children[1].children[1].children[0].children[1].children[0].checked = false;
+            var cls = obj.parentNode.parentNode.children[1].children[1].children[1].className;
+            if(cls === "next"){
+                obj.parentNode.parentNode.children[1].children[1].children[1].classList.add("not");
+                obj.parentNode.parentNode.children[1].children[1].children[1].classList.remove("next");
+            }
+            obj.parentNode.parentNode.parentNode.classList.add("hide");
+            document.getElementById("initial").classList.remove("hide");
+        }
+
+        function clear_single(obj){
+            obj.children[0].children[1].children[1].children[1].value = "";
+            obj.children[0].children[1].children[3].children[0].line.value = "";
+            obj.children[0].children[1].children[3].children[0].children[0].children[0].checked = false;
+            obj.children[0].children[1].children[3].children[0].children[1].children[0].checked = false;
+        }
+
+        function back_second(obj){
+            clear_single(obj.parentNode.parentNode.parentNode);
+            // document.getElementById("single")
+            obj.parentNode.parentNode.parentNode.classList.add("hide");
+            document.getElementById("type_cost").classList.remove("hide");
+        }
+
+        function back_third(obj){
+            obj.parentNode.parentNode.parentNode.classList.add("hide");
+            document.getElementById("type_cost").classList.remove("hide");
+        }
+
+        function enable(obj){
+            // console.log(obj.parentElement.parentElement.parentElement.children[1]);
+            obj.parentElement.parentElement.parentElement.children[1].classList.remove("not");
+            obj.parentElement.parentElement.parentElement.children[1].classList.add("next");
+        }
+        function check(obj){
+            // console.log("hi");
+            // console.log(obj);
+            // console.log(obj.cost.value);
+            if(obj.cost.value === "free"){
+                document.getElementById("detail").innerHTML = "This is a free event";
+                // obj.parentNode.parentNode.parentNode.classList.add("hide");
+            }
+            else{
+                // obj.parentNode.parentNode.parentNode.classList.add("hide");
+                document.getElementById("type_cost").classList.remove("hide");
+            }
+
+            no_edit(obj);
+            // obj.parentNode.parentNode.children[1].children[1].cost.value = "";
+            // obj.parentNode.parentNode.children[1].children[1].children[0].children[0].children[0].checked = false;
+            // obj.parentNode.parentNode.children[1].children[1].children[0].children[1].children[0].checked = false;
+            // var cls = obj.parentNode.parentNode.children[1].children[1].children[1].className;
+            // if(cls === "next"){
+            //     obj.parentNode.parentNode.children[1].children[1].children[1].classList.add("not");
+            //     obj.parentNode.parentNode.children[1].children[1].children[1].classList.remove("next");
+            // }
+
+            return false;
+        }
+        function forward(obj){
+            if(obj.parameter.value === "single"){
+                obj.parentNode.parentNode.parentNode.classList.add("hide");
+                obj.parentNode.parentNode.parentNode.parentNode.children[2].classList.remove("hide");
+            }
+            else{
+                obj.parentNode.parentNode.parentNode.classList.add("hide");
+                // document.getElementById("multiple").classList.remove("hide");
+                obj.parentNode.parentNode.parentNode.parentNode.children[3].classList.remove("hide");
+            }
+            obj.parentNode.parentNode.children[1].children[1].parameter.value = "";
+            obj.parentNode.parentNode.children[1].children[1].children[0].children[0].children[0].checked = false;
+            obj.parentNode.parentNode.children[1].children[1].children[0].children[1].children[0].checked = false;
+            var cls = obj.parentNode.parentNode.children[1].children[1].children[1].className;
+            if(cls === "next"){
+                obj.parentNode.parentNode.children[1].children[1].children[1].classList.add("not");
+                obj.parentNode.parentNode.children[1].children[1].children[1].classList.remove("next");
+            }
+            obj.parentNode.parentNode.parentNode.classList.add("hide");
+            return false;
+        }
+
+        function take_price(obj){
+            // console.log(obj.parentNode.parentNode.children[1].children[1].children[1].value);
+            var price = obj.parentNode.parentNode.children[1].children[1].children[1].value;
+            // console.log(obj.parentNode.parentNode.children[1].children[3].children[0].line.value);
+            var trans = obj.parentNode.parentNode.children[1].children[3].children[0].line.value;
+            if(price > 0 && !isNaN(price) && trans !== ""){ 
+                obj.parentNode.parentNode.parentNode.classList.add("hide");
+                document.getElementById("detail").innerHTML = "Price is "+price+' and Availablity is '+trans;
+                clear_single(obj.parentNode.parentNode.parentNode);
+            }
+            else{
+                if(price < 0 || isNaN(price) || price === ""){
+                    obj.parentNode.parentNode.children[1].children[1].classList.add("inp1");
+                    obj.parentNode.parentNode.children[1].children[1].classList.remove("inp");
+                }
+                alert("Please enter valid details");
+            }
+            
+        }
+
+        function toggle(object){
+            var obj = object.children[3].className;
+            if(obj === "togg hide"){
+                object.children[3].classList.remove("hide");
+            }
+            else{
+                object.children[3].classList.add("hide");
+            }
+            obj = object.children[4].className;
+            if(obj === "togg hide"){
+                object.children[4].classList.remove("hide");
+            }
+            else{
+                object.children[4].classList.add("hide");
+            }
+            var obj = object.parentElement.children[1].className;
+            if(obj === "description hide"){
+                object.parentElement.children[1].classList.remove("hide");
+            }
+            else{
+                object.parentElement.children[1].classList.add("hide");
+            }
+        }
+
+        function rmv_form(object){
+            var obj = object.parentNode.parentNode.parentNode;
+            object.parentNode.parentNode.parentNode.parentNode.removeChild(obj);
+            document.querySelector(".plus").classList.add("plus1");
+        }
+
+        // function rmv_form1(object){
+        //     var obj = object.parentNode.parentNode.parentNode;
+        //     object.parentNode.parentNode.parentNode.parentNode.removeChild(obj);
+        //     document.querySelector(".plus").classList.add("plus1");
+        // }
+
+        function keyup(obj){
+            var cls = obj.parentNode.className;
+            // console.log("run");
+            if(cls === "inp1"){
+                // console.log("run");
+                if(obj.value > 0 && !isNaN(obj.value) && obj.value != ""){
+                    obj.parentNode.classList.add("inp");
+                    obj.parentNode.classList.remove("inp1");
+                }
+            }
+        }
+        function finish(obj){
+            obj.parentNode.parentNode.parentNode.classList.add("hide");
+        }
+    </script>
+</body>
+</html>

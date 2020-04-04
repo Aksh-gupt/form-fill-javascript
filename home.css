@@ -1,0 +1,473 @@
+*{
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+.kuch{
+    max-width: 100%;
+}
+.full,.full1, .full2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+.full .box, .full1 .box, .full2 .box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 260px;
+    background: #fff;
+    opacity: 1;
+    border-radius: 5px;
+    max-width: 100%;
+}
+.full1 .box{
+    height: 330px;
+}
+.full2 .box{
+    height: 370px;
+    width: 400px;
+}
+.full .box .top, .full1 .box .top, .full2 .box .top{
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-bottom:1px solid #ddd;
+}
+.full .box .top svg, .full1 .box .top svg, .full2 .box .top svg{
+    font-weight: 100;
+    margin-top: 6px;
+    margin-right: 22px;
+}
+.full .box .top .barr, .full1 .box .top .barr, .full2 .box .top .barr{
+    margin-top: 1px;
+}
+.full .box .rad, .full1 .box .rad, .full2 .box .rad{
+    padding: 25px 30px;
+    font-size: 12px;
+    /* font-weight: bold; */
+}
+.full1 .box .rad{
+    font-weight: 100;
+}
+.full1 .box .rad .hea1{
+    margin-top: 30px;
+}
+.full .box .rad .hea{
+    padding-left: 15px;
+    display: flex;
+    position: relative;
+    font-weight: 100;
+    /* border: 1px solid #000; */
+}
+.full .box .rad .hea i{
+    position: relative;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+.full .box .rad .hea .abs{
+    position: absolute;
+    top: -33px;
+    right: -52px;
+    width: 115px;
+    font-size: 7px;
+    background: #000;
+    color:#fff;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    font-weight: 100;
+}
+.full .box .rad .hea .abs p{
+    margin: 4px 10px;
+}
+.full .box .rad .hea .abs p:after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid #000;
+}
+.full .box .rad form .pata{
+    display:flex;
+    /* border: 1px solid #000; */
+    /* height: 100% */
+}
+.full .box .rad form p{
+    position: relative;
+    width: 120px;
+    height: 70px;
+    border: 0.8px solid #B8B8B8;
+    border-radius: 3px;
+    margin: 8px 15px;
+    font-size: 12px;
+}
+.full .box .rad form .pata p label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+.full .box .rad form .pata p label span{
+    font-size: 12px;
+}
+.full .box .rad form .pata [type="radio"]:checked + label{
+    background: rgb(217, 233, 253);
+    box-shadow: rgb(133, 170, 216) 0px 4px 14px;
+}
+.full .box .rad form .pata [type="radio"]:not(:checked) + label{
+    background: #fff;
+}
+.full .box .rad form .pata [type="radio"]:checked + label:before ,
+.full .box .rad form .pata [type="radio"]:not(:checked) + label:before{
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    border-radius: 100%;
+}
+.full .box .rad form .pata [type="radio"]:checked + label:after ,
+.full .box .rad form .pata [type="radio"]:not(:checked) + label:after{
+    content: '';
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    background: #2F6CE5;
+    border-radius: 100%;
+}
+.full .box .rad form .pata [type="radio"]:not(:checked) + label:after{
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.full .box .rad form .pata [type="radio"]:checked + label:after{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.full .box .rad form p label img{
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    margin-top: 18px;
+}
+.full .box .rad form p label span{
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.full .box .rad form p input{
+    display: none;
+}
+.full .box .rad form .not, .full .box .rad form .next{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+.full .box .rad form .not{
+    background: rgb(84, 164, 238);
+    cursor: no-drop;
+    pointer-events: none;
+}
+.full .box .rad form .next{
+    background: rgb(11, 135, 252);
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.full1 .box .rad .inp, .full1 .box .rad .inp1, .form1 .ins .for .inp, .form1 .ins .for .inp1, .full1 .box .rad .inp1{
+    margin-top: 10px;
+    /* border: 1px solid #000; */
+    border-radius: 4px;
+    height: 30px;
+    padding: 0;
+}
+.full1 .box .rad .inp label, .full1 .box .rad .inp1 label, .form1 .ins .for .inp label, .form1 .ins .for .inp1 label{
+    height: 100%;
+    padding-left: 12px;
+    padding-right: 6px;
+    padding-top: 8px;
+    background: rgb(185, 184, 184);
+    margin-right: 0;
+    border-radius: 5px 0px 0px 5px;
+}
+.form1 .ins .for .inp1 label, .full1 .box .rad .inp1 label{
+    background: #fff;
+    border: 1px solid #f00;
+}
+.full1 .box .rad .inp input, .full1 .box .rad .inp1 input, .form1 .ins .for .inp input, .form1 .ins .for .inp1 input{
+    height: 100%;
+    border: none;
+    background: rgb(241, 240, 240);
+    margin-left: -5px;
+    padding: 9px 10px;
+    font-size: 10px;
+    border-radius: 0px 5px 5px 0px;
+    margin-top: 1px;
+    
+}
+.full1 .box .rad .inp input, .full1 .box .rad .inp1 input{
+    padding-top: 1.3em;
+}
+.form1 .ins .for .inp input, .form1 .ins .for .inp1 input{
+    padding-top: 1.2em;
+}
+.form1 .ins .for .inp1 input, .full1 .box .rad .inp1 input{
+    background: #fff;
+    border: 1px solid #f00;
+}
+.full1 .box .rad .inp input:focus, .full1 .box .rad .inp1 input:focus, .form1 .ins .for .inp input:focus, .form1 .ins .for .inp1 input:focus{
+    outline: none;
+}
+.full1 .box .rad .inp input::-webkit-outer-spin-button,
+.full1 .box .rad .inp input::-webkit-inner-spin-button,
+.full1 .box .rad .inp1 input::-webkit-outer-spin-button,
+.full1 .box .rad .inp1 input::-webkit-inner-spin-button,
+.form1 .ins .for .inp input::-webkit-outer-spin-button,
+.form1 .ins .for .inp input::-webkit-inner-spin-button,
+.form1 .ins .for .inp1 input::-webkit-outer-spin-button,
+.form1 .ins .for .inp1 input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.full1 .box .rad .inp input[type="number"], .form1 .ins .for .inp input[type="number"], .form1 .ins .for .inp1 input[type="number"] {
+    -moz-appearance: textfield;
+}
+.full1 .box .rad .avail form{
+    display: flex;
+}
+.full1 .box .rad .avail form p input{
+    display: none;
+}
+.full1 .box .rad .avail form p label{
+    position: relative;
+    border: 2px solid #000;
+    width: 130px;
+    margin-right: 20px;
+    padding: 7px 10px;
+    padding-left: 30px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 100;
+    cursor: pointer;
+}
+.full1 .box .rad .avail form [type="radio"]:checked + label:before,
+.full1 .box .rad .avail form [type="radio"]:not(:checked) + label:before{
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-radius: 100%;
+}
+.full1 .box .rad .avail form [type="radio"]:checked + label:after,
+.full1 .box .rad .avail form [type="radio"]:not(:checked) + label:after{
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    transform: translateY(-100%);
+    width:6px;
+    height: 6px;
+    background: #2F6CE5;
+    border-radius: 100%;
+}
+.full1 .box .rad .avail form [type="radio"]:checked + label{
+    border: 2px solid #2F6CE5;
+}
+.full1 .box .rad .avail form [type="radio"]:not(:checked) + label:after{
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.full1 .box .rad .avail form [type="radio"]:checked + label:after{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.full2 .box .bot, .full1 .box .bot{
+    position: fixed;
+    display: inline-block;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #B8B8B8;
+    height: 52px;
+}
+.full2 .box .bot .total_cost{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 20px;
+    font-weight: bold;
+}
+.full1 .box .bot .submit, .full2 .box .bot .submit{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    border: none;
+    background: #16B867;;
+    border-radius: 4px;
+    color: #fff;
+    padding: 7px 15px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.full2 .box .bot .finish{
+    position: absolute;
+    right: 100px;
+    bottom: 10px;
+    border: none;
+    background: #16B867;;
+    border-radius: 4px;
+    color: #fff;
+    padding: 7px 15px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.full1 .box .bot button:focus{
+    outline: none;
+}
+
+.full2 .top .plus{
+    position: absolute;
+    right: 20px;
+    font-weight: 100;
+    border: 1px solid blue;
+    font-size: 12px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: blue;
+    cursor: pointer;
+}
+.full2 .top .plus svg{
+    font-weight: 100;
+    margin-right: 1px;
+}
+.full2 .box .items{
+    overflow-y: scroll;
+    height: 270px;
+}
+.full2 .box .items .all .one{
+    border-bottom: 1px solid #ddd;
+}
+.full2 .box .items .all .one .head{
+    position: relative;
+    display: flex;
+    font-weight: bold;
+    padding: 15px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.full2 .box .items .one .head .category{
+    margin-left: 15px; 
+}
+.full2 .box .items .one .head .rupee{
+    margin-left: 5px;
+}
+.full2 .box .items .one .head .togg{
+    position: absolute;
+    right: 20px;
+    /* border: 2px solid #000; */
+    padding: 0;
+    margin: 0;
+    height: 10px;
+}
+.full2 .box .items .one .description{
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 5px;
+    padding-top: 0;
+}
+.full2 .box .items .one .description p{
+    font-size: 10px;
+}
+
+.items .form1 .ins{
+    padding: 15px;
+    padding-top: 10px;
+}
+.items .form1 .ins .last{
+    font-weight: bold;
+    font-size: 12px;
+}
+.items .form1 .ins .for{
+    border: 1px solid rgb(168, 167, 167);
+    padding: 10px;
+    padding-top: 5px;
+}
+.items .form1 .ins .for .cat{
+    display: flex;
+    /* height: 30px; */
+}
+.items .form1 .ins .for .cat p{
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+.items .form1 .ins .for .cat button{
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    padding-bottom: 15px;
+    font-size: 12px;
+}
+.items .form1 .ins .for .cat button:focus{
+    outline: none;
+}
+.items .form1 .ins .for .cat button svg{
+    padding-top: 3px;
+}
+.items .form1 .ins .for .tex{
+    border: none;
+    border-radius: 3px;
+    background: rgb(224, 222, 222);
+    font-size: 10px;
+    width: 200px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    height: 20px;
+}
+.items .form1 .ins .for .input_des{
+    height: 35px;
+}
+.items .form1 .ins .for p{
+    font-size: 12px;
+}
+.items .form1 .ins .for input:focus{
+    outline: none;
+}
+.items .form1 .ins .for textarea:focus{
+    outline: none;
+}
